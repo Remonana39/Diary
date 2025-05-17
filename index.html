@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的日记本</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-white">
+    <div class="container">
+        <div class="topbar">
+            <select id="weather-select">
+                <option value="晴">☀ 晴</option>
+                <option value="多云">⛅ 多云</option>
+                <option value="阴">☁ 阴</option>
+                <option value="雨">🌧 雨</option>
+                <option value="雪">❄ 雪</option>
+                <option value="雾">🌫 雾</option>
+                <option value="风">💨 风</option>
+            </select>
+            <input type="file" id="weather-img-upload" accept="image/*" style="display:inline-block;width:90px;">
+            <img id="weather-img" src="" alt="天气图片" style="display:none;max-width:40px;max-height:40px;vertical-align:middle;margin-left:6px;">
+            <div class="settings-area">
+                <span id="settings-icon" class="settings-icon">&#9881;</span>
+                <img id="avatar-img-mini" src="" alt="头像" style="display:none;vertical-align:middle;margin-left:8px;width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid #4f8cff;">
+            </div>
+        </div>
+        <div class="header">
+            <input type="text" id="user-name" placeholder="请输入你的姓名">
+            <button id="save-name-btn">保存姓名</button>
+            <span id="greet"></span>
+        </div>
+        <div class="main">
+            <div class="left-panel">
+                <h1>写日记</h1>
+                <div class="theme-select">
+                    <label for="theme-color">主题色：</label>
+                    <select id="theme-color">
+                        <option value="white">白色</option>
+                        <option value="black">黑色</option>
+                        <option value="blue">蓝色</option>
+                        <option value="pink">粉色</option>
+                    </select>
+                </div>
+                <div class="diary-form">
+                    <input type="text" id="diary-title" placeholder="标题">
+                    <textarea id="diary-content" placeholder="写下今天的心情..." rows="6"></textarea>
+                    <button id="save-btn">保存日记</button>
+                </div>
+                <div class="todo-section">
+                    <h3>待办事项</h3>
+                    <div class="todo-input-row">
+                        <input type="text" id="todo-input" placeholder="添加新待办">
+                        <input type="date" id="todo-deadline" style="font-size:13px;">
+                        <button id="add-todo-btn">添加</button>
+                    </div>
+                    <ul id="todo-list"></ul>
+                </div>
+            </div>
+            <div class="right-panel">
+                <h2>历史日记</h2>
+                <button id="show-diary-btn">查看日记</button>
+                <ul id="diary-list" style="display:none;"></ul>
+            </div>
+        </div>
+    </div>
+    <div id="password-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h3>请输入密码</h3>
+            <input type="password" id="input-password" placeholder="密码">
+            <button id="check-password-btn">确定</button>
+            <div id="password-error" class="error-msg"></div>
+        </div>
+    </div>
+    <div id="settings-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" id="close-settings-modal">&times;</span>
+            <h3>设置</h3>
+            <div style="margin-bottom:12px;">
+                <label>上传头像：</label>
+                <input type="file" id="avatar-upload" accept="image/*">
+            </div>
+            <div style="margin-bottom:12px;">
+                <label>设置/修改密码：</label>
+                <input type="password" id="set-password" placeholder="设置/修改密码">
+                <button id="save-password-btn">保存密码</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 

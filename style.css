@@ -1,0 +1,407 @@
+body {
+    background: var(--bg, #f5f6fa);
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s;
+}
+:root {
+    --bg: #f5f6fa;
+    --panel-bg: #fff;
+    --text: #222;
+    --accent: #4f8cff;
+    --item-bg: #f1f2f6;
+    --btn-bg: #4f8cff;
+    --btn-hover: #357ae8;
+    --del-bg: #ff5e57;
+    --del-hover: #e84118;
+}
+.theme-white {
+    --bg: #f5f6fa;
+    --panel-bg: #fff;
+    --text: #222;
+    --accent: #4f8cff;
+    --item-bg: #f1f2f6;
+    --btn-bg: #4f8cff;
+    --btn-hover: #357ae8;
+    --del-bg: #ff5e57;
+    --del-hover: #e84118;
+}
+.theme-black {
+    --bg: #18191a;
+    --panel-bg: #232526;
+    --text: #f5f6fa;
+    --accent: #888;
+    --item-bg: #232526;
+    --btn-bg: #444;
+    --btn-hover: #222;
+    --del-bg: #ff5e57;
+    --del-hover: #e84118;
+}
+.theme-blue {
+    --bg: #e3f0ff;
+    --panel-bg: #fafdff;
+    --text: #1a237e;
+    --accent: #1976d2;
+    --item-bg: #e3f0ff;
+    --btn-bg: #1976d2;
+    --btn-hover: #0d47a1;
+    --del-bg: #ff5e57;
+    --del-hover: #e84118;
+}
+.theme-pink {
+    --bg: #fff0f6;
+    --panel-bg: #fff5fa;
+    --text: #ad1457;
+    --accent: #e91e63;
+    --item-bg: #ffe4ec;
+    --btn-bg: #e91e63;
+    --btn-hover: #ad1457;
+    --del-bg: #ff5e57;
+    --del-hover: #e84118;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--panel-bg);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 24px 18px 18px 18px;
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+#user-name {
+    padding: 6px 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+#save-name-btn {
+    background: var(--btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#save-name-btn:hover {
+    background: var(--btn-hover);
+}
+#greet {
+    margin-left: 10px;
+    color: var(--accent);
+    font-weight: bold;
+}
+.main {
+    display: flex;
+    gap: 32px;
+}
+.left-panel {
+    flex: 1.1;
+    min-width: 260px;
+}
+.right-panel {
+    flex: 1;
+    min-width: 220px;
+    max-width: 350px;
+}
+.theme-select {
+    margin-bottom: 18px;
+}
+.theme-select label {
+    font-size: 15px;
+    color: var(--accent);
+    margin-right: 6px;
+}
+#theme-color {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #dcdde1;
+    font-size: 15px;
+}
+h1 {
+    color: var(--text);
+    margin-bottom: 18px;
+}
+.diary-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+#diary-title, #diary-content {
+    padding: 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    background: var(--panel-bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+#diary-title:focus, #diary-content:focus {
+    border-color: var(--accent);
+}
+#save-btn {
+    background: var(--btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#save-btn:hover {
+    background: var(--btn-hover);
+}
+h2 {
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+#diary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.diary-item {
+    background: var(--item-bg);
+    border-radius: 6px;
+    padding: 12px 14px 10px 14px;
+    margin-bottom: 12px;
+    position: relative;
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+.diary-title {
+    font-weight: bold;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+.diary-date {
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+.diary-author {
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 6px;
+}
+.delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: var(--del-bg);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.delete-btn:hover {
+    background: var(--del-hover);
+}
+.avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 10px;
+}
+#avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    background: #fff;
+}
+#avatar-upload {
+    font-size: 13px;
+}
+.password-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+#set-password {
+    padding: 6px 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+#save-password-btn {
+    background: var(--btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#save-password-btn:hover {
+    background: var(--btn-hover);
+}
+/* 弹窗样式 */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background: var(--panel-bg);
+    padding: 30px 32px 24px 32px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    min-width: 260px;
+    position: relative;
+    color: var(--text);
+}
+.close {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    font-size: 22px;
+    color: var(--accent);
+    cursor: pointer;
+}
+.error-msg {
+    color: #e53935;
+    margin-top: 8px;
+    font-size: 14px;
+}
+#show-diary-btn {
+    background: var(--btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: background 0.2s;
+}
+#show-diary-btn:hover {
+    background: var(--btn-hover);
+}
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+#weather-select {
+    font-size: 14px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid #dcdde1;
+    height: 28px;
+    min-width: 70px;
+}
+#weather-img-upload {
+    font-size: 12px;
+    padding: 2px 0;
+}
+#weather-img {
+    border-radius: 6px;
+    border: 1px solid #dcdde1;
+    background: #fff;
+}
+.todo-section {
+    margin-top: 28px;
+    background: var(--item-bg);
+    border-radius: 8px;
+    padding: 16px 14px 10px 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.todo-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    color: var(--accent);
+}
+.todo-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+#todo-input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+#add-todo-btn {
+    background: var(--btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#add-todo-btn:hover {
+    background: var(--btn-hover);
+}
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 15px;
+}
+.todo-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+}
+.todo-text {
+    flex: 1;
+    word-break: break-all;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+.todo-completed {
+    color: #aaa;
+    text-decoration: line-through;
+}
+.todo-delete-btn {
+    background: var(--del-bg);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.todo-delete-btn:hover {
+    background: var(--del-hover);
+} 
